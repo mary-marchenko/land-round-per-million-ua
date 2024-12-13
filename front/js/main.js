@@ -54,27 +54,17 @@
     });
 })();
 
-// btn
-let mainBtn = document.querySelector('.land__btn');
-let mainBtnCont = document.querySelector('.land__btn-cont');
-let mediaQuery = window.matchMedia('(min-width: 600px) and (min-height: 501px) and (orientation: landscape)');
+// padding no-ios
+document.addEventListener("DOMContentLoaded", function() {
+    let landBtn = document.querySelector('.land__btn');
+    let landBonus = document.querySelector('.land__main-right');
+    let landDate = document.querySelector('.land__details-date');
+    let landTime = document.querySelector('.land__details-time');
 
-function handleHover() {
-    if (mediaQuery.matches) {
-        mainBtn.addEventListener('mouseenter', scaleUp);
-        mainBtn.addEventListener('mouseleave', scaleDown);
-    } else {
-        mainBtn.removeEventListener('mouseenter', scaleUp);
-        mainBtn.removeEventListener('mouseleave', scaleDown);
+    if (!/iPad|iPhone|iPod|Mac/.test(navigator.userAgent)) {
+        landBtn.classList.add('noios-padding');
+        landBonus.classList.add('noios-padding');
+        landDate.classList.add('noios-padding');
+        landTime.classList.add('noios-padding');
     }
-}
-
-function scaleUp() {
-    mainBtnCont.style.transform = 'scale(1.1)';
-}
-function scaleDown() {
-    mainBtnCont.style.transform = 'scale(1)';
-}
-
-handleHover();
-mediaQuery.addEventListener('change', handleHover);
+});

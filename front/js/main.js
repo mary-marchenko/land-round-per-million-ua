@@ -57,13 +57,15 @@
 // padding no-ios
 document.addEventListener("DOMContentLoaded", function() {
     let landBtn = document.querySelector('.land__btn');
-    let landBonus = document.querySelector('.land__main-right');
+    let landBonusRight = document.querySelector('.land__main-right');
+    let landBonusLeft = document.querySelector('.land__main-left');
     let landDate = document.querySelector('.land__details-date');
     let landTime = document.querySelector('.land__details-time');
 
     if (!/iPad|iPhone|iPod|Mac/.test(navigator.userAgent)) {
         landBtn.classList.add('noios-padding');
-        landBonus.classList.add('noios-padding');
+        landBonusRight.classList.add('noios-padding');
+        landBonusLeft.classList.add('noios-padding');
         landDate.classList.add('noios-padding');
         landTime.classList.add('noios-padding');
     }

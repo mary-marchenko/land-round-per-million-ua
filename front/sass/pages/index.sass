@@ -149,8 +149,10 @@ body
     animation: slide-up 0.7s ease-out forwards, pulse 1.2s ease-in-out infinite
     animation-delay: 1.2s, 1.9s
     flex-shrink: 0
+    pointer-events: initial
     &:hover
       background: $green-hover
+      cursor: pointer
   &__info
     font-size: 14px
     line-height: 22px
@@ -159,16 +161,6 @@ body
     opacity: 0.8
     padding: 0 37px 11px
     width: 100%
-
-
-
-
-
-
-
-
-
-
 
 .footer
   background: $blue
